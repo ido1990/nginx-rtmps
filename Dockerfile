@@ -88,7 +88,7 @@ ENV CLOUDFLARE_URL rtmp://127.0.0.1:19352/live/
 ENV CLOUDFLARE_KEY ""
 
 #Telegram
-ENV TELEGRAM_URL /usr/bin/ffmpeg -analyzeduration 0 -i rtmp://127.0.0.1/live/$name -c copy -pix_fmt yuv420p -f flv rtmp://127.0.0.1:19350/s/
+ENV TELEGRAM_URL /usr/bin/ffmpeg -analyzeduration 0 -i rtmp://127.0.0.1/live/$name -c copy -pix_fmt yuv420p -f flv rtmp://127.0.0.1:19353/s/
 ENV TELEGRAM_KEY ""
 
 #Twitch
