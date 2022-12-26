@@ -3,7 +3,7 @@ FROM buildpack-deps:stretch
 # Versions of Nginx and nginx-rtmp-module to use
 ENV NGINX_VERSION nginx-1.18.0
 ENV NGINX_RTMP_MODULE_VERSION 1.2.1
-ENV STREAM_TOKEN ""
+
 # Install dependencies Stunnel4
 RUN apt-get update && \
     apt-get install -y ca-certificates openssl libssl-dev stunnel4 gettext nano ffmpeg && \
