@@ -3,7 +3,7 @@ FROM buildpack-deps:stretch
 # Versions of Nginx and nginx-rtmp-module to use
 ENV NGINX_VERSION nginx-1.18.0
 ENV NGINX_RTMP_MODULE_VERSION 1.2.1
-
+ENV STREAM_TOKEN = ""
 # Install dependencies Stunnel4
 RUN apt-get update && \
     apt-get install -y ca-certificates openssl libssl-dev stunnel4 gettext nano ffmpeg && \
@@ -86,7 +86,7 @@ ENV CLOUDFLARE_URL rtmp://127.0.0.1:19352/live/
 ENV CLOUDFLARE_KEY ""
 
 #Telegram
-ENV TELEGRAM_URL /usr/bin/ffmpeg -analyzeduration 0 -i rtmp://127.0.0.1/live -c copy -pix_fmt yuv420p -f flv rtmp://127.0.0.1:19353/s/
+ENV TELEGRAM_URL /usr/bin/ffmpeg -analyzeduration 0 -i rtmp://127.0.0.1/live/${STREAM_TOKEN} -c copy -pix_fmt yuv420p -f flv rtmp://127.0.0.1:19353/s/
 ENV TELEGRAM_KEY ""
 
 #Twitch

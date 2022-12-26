@@ -49,7 +49,13 @@ docker run -it -p 1935:1935 -e CLOUDFLARE_KEY="<key>" ido1990/nginx-rtmps
 * Twitch:
 
 ```bash
-docker run -it -p 1935:1935 -e TWITCH_URL="rtmp://<url>" -e TWITCH_KEY="<key>" thiagoeolima/nginx-rtmps
+docker run -it -p 1935:1935 -e TWITCH_URL="rtmp://<url>" -e TWITCH_KEY="<key>" ido1990/nginx-rtmps
+```
+
+* Telegram:
+
+```bash
+docker run -it -p 1935:1935 -e TELEGRAM_KEY="<key>" -e STREAM_TOKEN="mystreamexmaple" ido1990/nginx-rtmps
 ```
 
 * OBS
@@ -61,7 +67,7 @@ rtmp://localhost:1935/live
 * Instagram:
 
 ```bash
-docker run -it -p 1935:1935 -e INSTAGRAM_KEY=<key> thiagoeolima/nginx-rtmps
+docker run -it -p 1935:1935 -e INSTAGRAM_KEY=<key> ido1990/nginx-rtmps
 ```
 
 * OBS
@@ -99,7 +105,7 @@ docker logs nginx-rtmp
 If you need to modify the configurations you can create a file `nginx.conf` and replace the one in this image using a `Dockerfile` that is based on the image, for example:
 
 ```Dockerfile
-FROM thiagoeolima/nginx-rtmps
+FROM ido1990/nginx-rtmps
 
 COPY nginx.conf /etc/nginx/nginx.conf
 ```
