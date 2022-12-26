@@ -8,7 +8,7 @@ ENV NGINX_RTMP_MODULE_VERSION 1.2.1
 
 # Install dependencies Stunnel4
 RUN apt-get update && \
-    apt-get install -y ca-certificates openssl libssl-dev stunnel4 gettext && \
+    apt-get install -y ca-certificates openssl libssl-dev stunnel4 gettext nano ffmpeg && \
     rm -rf /var/lib/apt/lists/*
 
 # Download and decompress Nginx
