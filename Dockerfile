@@ -68,6 +68,9 @@ COPY stunnel/instagram.conf /etc/stunnel/conf.d/instagram.conf
 #Cloudflare Stunnel Port 19352
 COPY stunnel/cloudflare.conf /etc/stunnel/conf.d/cloudflare.conf
 
+#Telegram Stunnel Port 19353
+COPY stunnel/telegram.conf /etc/stunnel/conf.d/telegram.conf
+
 #Youtube
 ENV YOUTUBE_URL rtmp://a.rtmp.youtube.com/live2/
 ENV YOUTUBE_KEY ""
@@ -83,6 +86,10 @@ ENV INSTAGRAM_KEY ""
 #Cloudflare
 ENV CLOUDFLARE_URL rtmp://127.0.0.1:19352/live/
 ENV CLOUDFLARE_KEY ""
+
+#Telegram
+ENV TELEGRAM_URL exec_push /usr/bin/ffmpeg -analyzeduration 0 -i rtmp://127.0.0.1/live/$name -c copy -pix_fmt yuv420p -f flv rtmp://127.0.0.1:19350/s/
+ENV TELEGRAM_KEY ""
 
 #Twitch
 ENV TWITCH_URL ""
