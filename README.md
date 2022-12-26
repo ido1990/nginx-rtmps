@@ -20,9 +20,9 @@ This was inspired by other similar previous images from [tiangolo](https://hub.d
 The main purpose (and test case) to build it was to allow streaming from 
 [**OBS Studio**](https://obsproject.com/) to different clients at the same time.
 
-**GitHub repo**: <https://github.com/thiagoeolima/nginx-rtmps>
+**GitHub repo**: <https://github.com/ido1990/nginx-rtmps>
 
-**Docker Hub image**: <https://hub.docker.com/r/thiagoeolima/nginx-rtmps/>
+**Docker Hub image**: <https://hub.docker.com/r/ido1990/nginx-rtmps/>
 
 ## Details
 
@@ -31,19 +31,19 @@ The main purpose (and test case) to build it was to allow streaming from
 * For the simplest case, just run a container with this image:
 
 ```bash
-docker run -it -p 1935:1935 --name nginx-rtmps thiagoeolima/nginx-rtmps
+docker run -it -p 1935:1935 --name nginx-rtmps ido1990/nginx-rtmps
 ```
 
 * Facebook and Youtube:
 
 ```bash
-docker run -it -p 1935:1935 -e FACEBOOK_KEY="<key>" -e YOUTUBE_KEY=<key> thiagoeolima/nginx-rtmps
+docker run -it -p 1935:1935 -e FACEBOOK_KEY="<key>" -e YOUTUBE_KEY=<key> ido1990/nginx-rtmps
 ```
 
 * Cloudflare:
 
 ```bash
-docker run -it -p 1935:1935 -e CLOUDFLARE_KEY="<key>" thiagoeolima/nginx-rtmps
+docker run -it -p 1935:1935 -e CLOUDFLARE_KEY="<key>" ido1990/nginx-rtmps
 ```
 
 * Twitch:
