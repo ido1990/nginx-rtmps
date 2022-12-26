@@ -1,7 +1,5 @@
 FROM buildpack-deps:stretch
 
-LABEL maintainer="Thiago Lima <contact@thiagoemmanuel.com>"
-
 # Versions of Nginx and nginx-rtmp-module to use
 ENV NGINX_VERSION nginx-1.18.0
 ENV NGINX_RTMP_MODULE_VERSION 1.2.1
