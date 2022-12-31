@@ -52,6 +52,9 @@ RUN ln -sf /dev/stdout /var/log/nginx/access.log && \
 COPY nginx/nginx.conf.template /etc/nginx/nginx.conf.template
 COPY nginx/nginx.conf /etc/nginx/nginx.conf
 
+# Create folder for HTML and HLS
+RUN mkdir -p /www
+COPY nginx/index.html /www
 # Config Stunnel
 RUN mkdir -p  /etc/stunnel/conf.d
 # Set up config file 
